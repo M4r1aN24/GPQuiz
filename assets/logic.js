@@ -5,28 +5,23 @@ var userResponse = document.querySelector("#choices");
 var score = parseInt('');
 //create an event listener that can iterate over the questions when "start quiz is clicked"
 
-
-
-
 startButton.addEventListener("click", function(event){
     event.preventDefault();
+
+    var ul = document.createElement("ul");
+    questionsAll.appendChild(ul);
+    var li = document.createElement("li");
+    ul.appendChild(li);
+    li.textContent = questions;
+    
+    console.log(li);
+
     for(var i = 0; i < questions.length; i++){
         var questionsAll = questions[i];
         };
     console.log('button clicked');
 });
 
-function quiz(){
-    var ul = document.createElement("ul");
-questionsAll.appendChild(ul);
-var li = document.createElement("li");
-ul.appendChild(li);
-li.textContent = questions;
-
-console.log(li);
-}
-
-quiz();
 // when the start quiz button is clicked, the first questions should pop on the screen from questions.js
 // need to use appendChild and innerHTML the questions to the main html class questions which is questionsAll now. 
 
