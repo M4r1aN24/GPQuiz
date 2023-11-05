@@ -24,11 +24,10 @@ console.log(li);
 startButton.addEventListener("click", function(event){
     event.preventDefault();
 
-
 });
 
 // need to use appendChild and innerHTML the questions to the main html class questions which is questionsAll now. 
-console.log(questionsAll);
+
 console.log(questions);
 
 // need to create a function that adds point for every question's correct answer. 
