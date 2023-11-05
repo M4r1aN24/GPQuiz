@@ -1,5 +1,5 @@
 var startButton = document.querySelector("#start");
-var container = document.querySelector(".start");
+var container = document.querySelector("#start-screen");
 var questionsAll = document.querySelector("#questions");
 var userResponse = document.querySelector("#choices");
 var score = parseInt('');
@@ -12,20 +12,22 @@ var questionsAll = questions[i];
 
 var ul = document.createElement("ul");
 questionsAll.appendChild(ul);
-ul.appendChild(li);
+
 
 var li = document.createElement("li");
+ul.appendChild(li);
 li.textContent = questions;
 li.setAttribute("data-index", i);
 
 console.log(li);
 }
 
+
 startButton.addEventListener("click", function(event){
     event.preventDefault();
-
+    console.log('button clicked');
 });
-
+// when the start quiz button is clicked, the first questions should pop on the screen from questions.js
 // need to use appendChild and innerHTML the questions to the main html class questions which is questionsAll now. 
 
 console.log(questions);
