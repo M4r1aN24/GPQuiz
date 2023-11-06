@@ -1,15 +1,15 @@
 var questions = [
     {
-        question1: "What's the deadliest animal on the planet?",
-        answers1: ["Rhino",
+        question: "What's the deadliest animal on the planet?",
+        answers: ["Rhino",
         "Hippo",
         "Lion",
         "Meerkat"],
         correctAnswerIndex: 1
     },
     {
-        question2: "What's my favourite thing to do?",
-        answers2: [
+        question: "What's my favourite thing to do?",
+        answers: [
             "Nothing",
             "Nothing at all",
             "Something",
@@ -19,8 +19,8 @@ var questions = [
 
     },
     {
-        question3: "What's my favourite thing to do?",
-        answers3: [
+        question: "What's my favourite thing to do?",
+        answers: [
             "Nothing",
             "Nothing at all",
             "Something",
@@ -30,8 +30,8 @@ var questions = [
 
     },
     {
-        question4: "What motorbike do I have?",
-        answers4: [
+        question: "What motorbike do I have?",
+        answers: [
             "KTM",
             "Yamaha",
             "Suzuki",

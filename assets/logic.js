@@ -1,26 +1,50 @@
 var startButton = document.querySelector("#start");
 var container = document.querySelector("#start-screen");
 var questionsAll = document.querySelector("#questions");
-var userResponse = document.querySelector("#choices");
-var score = parseInt('');
+var answerContainer = document.querySelector("#choices");
+var questionTitle = document.querySelector("#question-title");
+var currentQuestionIndex = 0;
 //create an event listener that can iterate over the questions when "start quiz is clicked"
+//if we get type = " button", we do not need event prevent default
+startButton.addEventListener("click",startQuiz);
 
-startButton.addEventListener("click", function(event){
-    event.preventDefault();
+function startQuiz(){
+    displayQuestion();
+    //need the timer here 
+    // use timer for scoring - when they give a wrong answer, take out of their time and alert them. 
+    // 
+    // collect the points of the answers
+    questionsAll.classList.remove("hide");
+};
 
+function displayQuestion(){
     var ul = document.createElement("ul");
-    questionsAll.appendChild(ul);
-    var li = document.createElement("li");
-    ul.appendChild(li);
-    li.textContent = questions;
-    
-    console.log(li);
 
-    for(var i = 0; i < questions.length; i++){
-        var questionsAll = questions[i];
+    for(var i = 0; i < questions[currentQuestionIndex].answers.length; i++){
+        var li = document.createElement("li");
+        li.textContent = questions[currentQuestionIndex].answers[i];
+        li.addEventListener('click', function(event){
+            if(event.target === "Hippo"){
+                
+            } 
+            // i need to work out how to change the questions once clicked
+            //check how to take the answer and find out if it's the correct one
+            //if the correct one add 5 seconds,
+            //if the wrong one take 10 seconds.
+            //I still need to change something and move arround, but most of the code is here.
+        })
+        ul.appendChild(li);
         };
-    console.log('button clicked');
-});
+    answerContainer.appendChild(ul);
+
+    questionTitle.textContent = questions[currentQuestionIndex].question;
+    questionsAll.classList.remove("hide");
+}
+
+
+
+
+
 
 // when the start quiz button is clicked, the first questions should pop on the screen from questions.js
 // need to use appendChild and innerHTML the questions to the main html class questions which is questionsAll now. 
