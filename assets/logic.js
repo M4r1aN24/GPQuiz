@@ -9,26 +9,12 @@ var secondsLeft = 60;
 var choiceBtn;
 var choiceContainer;
 
-//create an event listener that can iterate over the questions when "start quiz is clicked"
-//if we get type = " button", we do not need event prevent default
-startButton.addEventListener("click", startQuiz);
 
+startButton.addEventListener("click", startQuiz);
+// when I press the start button the timer should be set of from 60 seconds downward.
 function startQuiz() {
   displayQuestion();
   //need the timer here
-
-//   var timerInterval = setInterval(function() {
-//       secondsLeft--;
-//       timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
-
-//       if(secondsLeft === 0) {
-//         // Stops execution of action at set interval
-//         clearInterval(timerInterval);
-//         // Calls function to create and append image
-//         sendMessage();
-//       }
-
-//     }, 1000);
   
   container.classList.add("hide");
   questionsAll.classList.remove("hide");
@@ -54,17 +40,17 @@ function getQuestion(event) {
     var currentQuestion = questions[currentQuestionIndex];
     answerContainer.innerHTML = "";
   
-
     if (time <= 0 || currentQuestionIndex === questions.length) {
         quizEnd();
       } else {
         displayQuestion();
       }
+    
 }
 
 function quizEnd(){
-    
+    questionTitle.classList.add("hide");
 }
-questionTitle.classList.add("hide");
+
 answerContainer.onclick = getQuestion;
 

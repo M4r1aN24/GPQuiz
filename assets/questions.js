@@ -19,14 +19,14 @@ var questions = [
 
     },
     {
-        question: "What's my favourite thing to do?",
+        question: "What's my favourite food?",
         answers: [
-            "Nothing",
-            "Nothing at all",
-            "Something",
-            "All of the above"
+            "Pizza",
+            "Burgers",
+            "Cheesecake",
+            "Ice Cream"
         ],
-        correctAnswerIndex: 4
+        correctAnswerIndex: 1
 
     },
     {
