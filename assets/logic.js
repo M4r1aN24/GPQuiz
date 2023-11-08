@@ -43,9 +43,12 @@ function displayQuestion(){
         li.addEventListener('click', function(event){
             // how to target the li as it is but only the text inside the li
             
-            if(event.target.value === questions.correctAnswerIndex){
-                console.log(questions.correctAnswerIndex);
-            } 
+            if(event.target.textContent === questions[currentQuestionIndex].correctAnswerIndex){
+                alert("Correct answer!");
+                console.log(questions[currentQuestionIndex].correctAnswerIndex);
+            } else {
+                alert("wrong answer");
+            }
             // i need to work out how to change the questions once clicked
             //check how to take the answer and find out if it's the correct one
             //if the correct one add 5 seconds,
@@ -60,13 +63,7 @@ function displayQuestion(){
     questionsAll.classList.remove("hide");
 }
 
-
-
-
-
-
-// when the start quiz button is clicked, the first questions should pop on the screen from questions.js
-// need to use appendChild and innerHTML the questions to the main html class questions which is questionsAll now. 
+// when the start quiz button is clicked, the first questions should pop on the screen from questions.js 
 
 console.log(questions);
 
