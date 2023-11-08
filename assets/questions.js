@@ -5,7 +5,7 @@ var questions = [
         "Hippo",
         "Lion",
         "Meerkat"],
-        correctAnswerIndex: 1
+        correctAnswerIndex: "Hippo"
     },
     {
         question: "What's my favourite thing to do?",
