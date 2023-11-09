@@ -8,7 +8,7 @@ var timeEl = document.querySelector("#time");
 var highScores = document.getElementById(".highscores");
 var currentQuestionIndex = 0;
 var secondsLeft = 60;
-var score = secondsLeft; 
+var score = 0; 
 var choiceBtn;
 var choiceContainer;
 
@@ -16,7 +16,7 @@ startButton.addEventListener("click", startQuiz);
 
 function startQuiz() {
   displayQuestion();
-
+  alert("You score can be also negative. Answer carefully");
   var timeInterval = setInterval(function () {
     if (secondsLeft > 1) {
       timeEl.textContent = secondsLeft + " seconds left";
@@ -55,12 +55,15 @@ function getQuestion(event) {
   var choiceClick = event.target;
   var currentQuestion = questions[currentQuestionIndex];
   console.log(choiceClick.value);
-
+ 
   if(choiceClick.value === currentQuestion.correctAnswerIndex){
-    score = secondsLeft + 10;
+    score = 10 + score;
   } else {
-    secondsLeft - 5;
+    score = score - 5;
   }
+  highScores = "This is your score " + score;
+  console.log(highScores);
+  
     currentQuestionIndex++;
     
     answerContainer.innerHTML = "";
@@ -70,6 +73,7 @@ function getQuestion(event) {
       } else {
         displayQuestion();
       }
+      questionTitle.classList.add("hide");
 }
 
 function quizEnd(){
@@ -78,8 +82,8 @@ function quizEnd(){
   // } else {
   //   displayQuestion();
   // }
-    questionTitle.classList.add("hide");
 }
+
 answerContainer.onclick = getQuestion;
 
 
