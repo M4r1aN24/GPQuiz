@@ -4,7 +4,7 @@ var questionsAll = document.querySelector("#questions");
 var answerContainer = document.querySelector("#choices");
 var questionTitle = document.querySelector("#question-title");
 var mainWrapper = document.querySelector ('#wrapper');
-var timeEl = document.querySelector("#timer");
+var timeEl = document.querySelector("#time");
 var highScores = document.getElementById(".highscores");
 var currentQuestionIndex = 0;
 var secondsLeft = 60;
@@ -14,24 +14,24 @@ var choiceContainer;
 
 startButton.addEventListener("click", startQuiz, setInterval);
 
-var timeInterval = setInterval(function () {
-  if (secondsLeft > 1) {
-    timeEl.textContent = secondsLeft + ' seconds remaining';
-    secondsLeft--;
-  } else if (secondsLeft === 1) {
-    
-    timeEl.textContent = secondsLeft + ' second remaining';
-    secondsLeft--;
-  } else {
-    timeEl.textContent = '';
-    clearInterval(timeInterval);
-  }
-}, 1000);
-
 console.log(setInterval);
 
 function startQuiz() {
   displayQuestion();
+
+  var timeInterval = setInterval(function () {
+    if (secondsLeft > 1) {
+      timeEl.textContent = secondsLeft + ' seconds remaining';
+      secondsLeft--;
+    } else if (secondsLeft === 1) {
+      
+      timeEl.textContent = secondsLeft + ' second remaining';
+      secondsLeft--;
+    } else {
+      timeEl.textContent = '';
+      clearInterval(timeInterval);
+    }
+  }, 1000);
   
   
   container.classList.add("hide");
@@ -52,7 +52,7 @@ choiceContainer = document.createElement("div");
   questionTitle.textContent = questions[currentQuestionIndex].question;
   questionsAll.classList.remove("hide");
 }
-console.log()
+
 function getQuestion(event) {
     currentQuestionIndex++;
     var currentQuestion = questions[currentQuestionIndex];
@@ -72,8 +72,6 @@ function quizEnd(){
   } else {
     displayQuestion();
   }
-
-
     questionTitle.classList.add("hide");
 }
 
