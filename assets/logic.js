@@ -12,27 +12,24 @@ var score = secondsLeft;
 var choiceBtn;
 var choiceContainer;
 
-startButton.addEventListener("click", startQuiz, setInterval);
-
-console.log(setInterval);
+startButton.addEventListener("click", startQuiz);
 
 function startQuiz() {
   displayQuestion();
 
   var timeInterval = setInterval(function () {
     if (secondsLeft > 1) {
-      timeEl.textContent = secondsLeft + ' seconds remaining';
+      timeEl.textContent = secondsLeft + " seconds left";
       secondsLeft--;
     } else if (secondsLeft === 1) {
       
-      timeEl.textContent = secondsLeft + ' second remaining';
+      timeEl.textContent = secondsLeft + " second left";
       secondsLeft--;
     } else {
       timeEl.textContent = '';
       clearInterval(timeInterval);
     }
   }, 1000);
-  
   
   container.classList.add("hide");
   questionsAll.classList.remove("hide");
@@ -47,6 +44,15 @@ choiceContainer = document.createElement("div");
 
     choiceContainer.appendChild(choiceBtn);
   }
+console.log(choiceBtn);
+
+// put a data type on the buttons so I can target the correctAnswerIndex.
+  // if(questions.correctAnswerIndex ==){
+  //   alert("correct");
+  // } else {
+  //   alert ("I'll get that 10 seconds from ya now.");
+  // };
+
   answerContainer.appendChild(choiceContainer);
 
   questionTitle.textContent = questions[currentQuestionIndex].question;
