@@ -29,7 +29,7 @@ function startQuiz() {
       timeEl.textContent = '';
       clearInterval(timeInterval);
     }
-  }, 1000);
+  }, 500);
   
   container.classList.add("hide");
   questionsAll.classList.remove("hide");
@@ -41,17 +41,9 @@ choiceContainer = document.createElement("div");
   for (var i = 0; i < questions[currentQuestionIndex].answers.length; i++) {
     choiceBtn = document.createElement("button");
     choiceBtn.textContent = questions[currentQuestionIndex].answers[i];
-
+    choiceBtn.setAttribute('value', questions[currentQuestionIndex].answers[i]);
     choiceContainer.appendChild(choiceBtn);
   }
-console.log(choiceBtn);
-
-// put a data type on the buttons so I can target the correctAnswerIndex.
-  // if(questions.correctAnswerIndex ==){
-  //   alert("correct");
-  // } else {
-  //   alert ("I'll get that 10 seconds from ya now.");
-  // };
 
   answerContainer.appendChild(choiceContainer);
 
@@ -60,26 +52,34 @@ console.log(choiceBtn);
 }
 
 function getQuestion(event) {
+  var choiceClick = event.target;
+  var currentQuestion = questions[currentQuestionIndex];
+  console.log(choiceClick.value);
+
+  if(choiceClick.value === currentQuestion.correctAnswerIndex){
+    score = secondsLeft + 10;
+  } else {
+    secondsLeft - 5;
+  }
     currentQuestionIndex++;
-    var currentQuestion = questions[currentQuestionIndex];
+    
     answerContainer.innerHTML = "";
-  
+
     if (secondsLeft <= 0 || currentQuestionIndex === questions.length) {
         quizEnd();
       } else {
         displayQuestion();
       }
-    
 }
 
 function quizEnd(){
-  if(secondsLeft <= 0 || currentQuestionIndex === questions.length) {
-    highScores.classList.add('show');
-  } else {
-    displayQuestion();
-  }
+  // if(secondsLeft <= 0 || currentQuestionIndex === questions.length) {
+  //   // highScores.classList.add('show');
+  // } else {
+  //   displayQuestion();
+  // }
     questionTitle.classList.add("hide");
 }
-
 answerContainer.onclick = getQuestion;
+
 

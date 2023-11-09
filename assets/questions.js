@@ -1,7 +1,8 @@
 var questions = [
     {
         question: "What's the deadliest animal on the planet?",
-        answers: ["Rhino",
+        answers: [
+        "Rhino",
         "Hippo",
         "Lion",
         "Meerkat"],
@@ -15,7 +16,7 @@ var questions = [
             "Something",
             "All of the above"
         ],
-        correctAnswerIndex: 4
+        correctAnswerIndex: "All of the above"
 
     },
     {
@@ -26,7 +27,7 @@ var questions = [
             "Cheesecake",
             "Ice Cream"
         ],
-        correctAnswerIndex: 1
+        correctAnswerIndex: "Ice Cream"
 
     },
     {
@@ -37,7 +38,7 @@ var questions = [
             "Suzuki",
             "Scooter"
         ],
-        correctAnswerIndex: 1
+        correctAnswerIndex: "KTM"
 
     }
     
