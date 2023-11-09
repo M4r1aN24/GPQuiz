@@ -12,7 +12,8 @@ You can access the quiz at the link below:
 
 https://m4r1an24.github.io/GPQuiz/
 
-This should look like below: 
+The starting page should look like below: 
+
 ![Alt text](<Quiz GP.png>)
 
 To start the quiz please click the start button. 

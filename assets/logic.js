@@ -3,18 +3,33 @@ var container = document.querySelector("#start-screen");
 var questionsAll = document.querySelector("#questions");
 var answerContainer = document.querySelector("#choices");
 var questionTitle = document.querySelector("#question-title");
-var timeEl = document.querySelector(".time");
+var mainWrapper = document.querySelector ('#wrapper');
+var timeEl = document.querySelector("#timer");
 var currentQuestionIndex = 0;
 var secondsLeft = 60;
 var choiceBtn;
 var choiceContainer;
 
+var timeInterval = setInterval(function () {
+  if (timeLeft > 1) {
+    timeEl.textContent = secondsLeft;
+    secondsLeft--;
+  } else if (secondsLeft === 1) {
+    
+    timeEl.textContent = secondsLeft + ' second remaining';
+    secondsLeft--;
+  } else {
+    timeEl.textContent = '';
+    clearInterval(timeInterval);
+  }
+}, 1000);
 
-startButton.addEventListener("click", startQuiz);
-// when I press the start button the timer should be set of from 60 seconds downward.
+
+startButton.addEventListener("click", startQuiz, setInterval);
+
 function startQuiz() {
   displayQuestion();
-  //need the timer here
+  
   
   container.classList.add("hide");
   questionsAll.classList.remove("hide");
