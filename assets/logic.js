@@ -11,6 +11,7 @@ var secondsLeft = 60;
 var score = 0; 
 var choiceBtn;
 var choiceContainer;
+var scoresContainer;
 
 startButton.addEventListener("click", startQuiz);
 
@@ -58,11 +59,14 @@ function getQuestion(event) {
  
   if(choiceClick.value === currentQuestion.correctAnswerIndex){
     score = 10 + score;
+    highScores = score;
+    console.log("That's the correct answer " + highScores);
   } else {
-    score = score - 5;
+    highScores = highScores - 5;
+    console.log("That's the incorrect answer " + highScores);
   }
-  highScores = "This is your score " + score;
-  console.log(highScores);
+  
+  
   
     currentQuestionIndex++;
     
