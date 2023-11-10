@@ -22,6 +22,10 @@ Once the start button has been pressed you will see the questions iterating.
 
 To move to the next question, you will have to chose an answer.
 
+At this time, the score is only visible in console.log, if you'd like to see your score please press right click on the web page and click on "inspect" -> Console.
+
+This is a second draft of the page, I will update soon the full working version.
+
 ## License 
 
 MIT
