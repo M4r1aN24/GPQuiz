@@ -17,7 +17,7 @@ startButton.addEventListener("click", startQuiz);
 
 function startQuiz() {
   displayQuestion();
-  alert("You score can be also negative. Answer carefully");
+  alert("Your score can be also negative. Answer carefully");
   var timeInterval = setInterval(function () {
     if (secondsLeft > 1) {
       timeEl.textContent = secondsLeft + " seconds left";
@@ -60,10 +60,10 @@ function getQuestion(event) {
   if(choiceClick.value === currentQuestion.correctAnswerIndex){
     score = 10 + score;
     highScores = score;
-    console.log("That's the correct answer " + highScores);
+    alert("That's the correct answer, your score is  " + highScores + " points");
   } else {
     highScores = highScores - 5;
-    console.log("That's the incorrect answer " + highScores);
+    alert("That's the incorrect answer , your score is " + highScores + " points");
   }
   
   
